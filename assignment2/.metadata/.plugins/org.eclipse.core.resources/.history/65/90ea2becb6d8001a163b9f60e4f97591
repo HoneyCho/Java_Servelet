@@ -1,0 +1,51 @@
+package com.best.ee;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Category {
+	public Category(String category_name) {
+		super();
+		this.category_name = category_name;
+	}
+
+	String category_name;
+
+	public String getCategory_name() {
+		return category_name;
+	}
+
+	public void setCategory_name(String category_name) {
+		this.category_name = category_name;
+	}
+	
+	public static List<Category> getAllCategories() {
+		List<Category> cats = new ArrayList();
+		ResultSet rs;
+		try {
+			Connection con = DB.getConnection();
+			Statement stmt = con.createStatement();
+			rs = stmt.executeQuery("select * from Library-Book");
+			
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+			
+			return cats;
+		}
+		
+		
+		while (rs.next()) {
+			Category cat = new  Category(rs.getString(2));
+
+			cats.add(cat);
+		}
+		
+		return cats;
+		
+		return cats;
+	}
+}

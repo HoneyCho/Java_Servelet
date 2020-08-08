@@ -1,0 +1,9 @@
+package com.best.ee;
+
+public class DB {
+	
+	public void getConnection() {
+		
+	}
+
+}

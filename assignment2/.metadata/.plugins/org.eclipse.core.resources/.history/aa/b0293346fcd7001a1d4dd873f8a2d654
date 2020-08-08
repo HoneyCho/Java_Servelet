@@ -1,0 +1,11 @@
+package com.best.ee;
+
+public class book {
+int id;
+ String name;
+String category;
+int price;
+String isbn;
+String qty;
+
+} 

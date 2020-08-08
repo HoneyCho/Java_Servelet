@@ -1,0 +1,22 @@
+
+<%@ include file="header.jsp"%>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<form action="SaveBook.jsp">
+	<h3>Add Book Form</h3>
+	Name:<input type="text" name="name" /><br> Author:<input
+		type="text" name="author" /><br> Category: <select
+		class="form-control">
+		<c:forEach items="${categories}" var="cat">
+			<option>${cat.name}</option>
+		</c:forEach>
+	</select> <br> Price:<input type="text" name="price" /><br> ISBN: <input
+		type="text" name="isbn" /><br> <input type="submit" value="Save" />
+	</button>
+
+</form>
+</body>
+</html>
